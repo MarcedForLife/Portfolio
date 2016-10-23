@@ -110,13 +110,6 @@
     </li>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../about/">About</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -489,6 +482,69 @@ void Editor::SpawnEntitySelection()
     }
 }
 
+void Editor::PickupSelection()
+{
+    // double check that we aren't holding an entity
+    if (!m_EntitySelection)
+    {
+        PxVec3 location = Engine::GetInstance().m_Camera-&gt;GetWorldLocation();
+        PxVec3 camRotation = Engine::GetInstance().m_Camera-&gt;GetWorldRotation();
+
+        PxVec3 origin = Engine::GetInstance().m_Camera-&gt;GetWorldLocation();     // [in] Ray origin
+        PxVec3 unitDir = PxVec3(0.0f, 0.0f, 0.0f);                              // [in] Normalized ray direction
+        PxReal maxDistance = 30.0f;                                             // [in] Raycast max distance
+
+        float cameraDistance = 0.6f;
+
+        origin.x += (cameraDistance * cos(camRotation.x) * sin(camRotation.y));
+        origin.y += (cameraDistance * sin(camRotation.x));
+        origin.z += (cameraDistance * cos(camRotation.x) * cos(camRotation.y));
+
+        unitDir.x = cos(camRotation.x) * sin(camRotation.y);
+        unitDir.y = sin(camRotation.x);
+        unitDir.z = cos(camRotation.x) * cos(camRotation.y);
+
+        // Raycast
+        PxRaycastBuffer hit;                                        // [out] Raycast results
+
+        // Raycast against all static &amp; dynamic objects (no filtering)
+        // The main result from this call is the closest hit, stored in the 'hit.block' structure
+        bool contact = Engine::GetInstance().gScene-&gt;raycast(origin, unitDir, maxDistance, hit);
+
+        // The raycast hit something
+        if (contact)
+        {
+            // Figure out what the raycast hit and remove it from the current level
+            Entity* selectedEntity = static_cast&lt;Entity*&gt;(hit.block.actor-&gt;userData);
+            switch (selectedEntity-&gt;GetEntityType())
+            {
+            case EntityType::WORLDBLOCK:
+                m_Level-&gt;m_WorldBlocks.erase(std::remove(m_Level-&gt;m_WorldBlocks.begin(), m_Level-&gt;m_WorldBlocks.end(), selectedEntity), m_Level-&gt;m_WorldBlocks.end());
+                break;
+            case EntityType::PLAYERSTART:
+                m_Level-&gt;m_PlayerStart = NULL;
+                break;
+            case EntityType::PLAYERFINISH:
+                m_Level-&gt;m_PlayerFinish = NULL;
+                break;
+            case EntityType::PICKUP:
+            {
+                Pickup* pickup = static_cast&lt;Pickup*&gt;(selectedEntity);
+                m_Level-&gt;m_Pickups.erase(std::remove(m_Level-&gt;m_Pickups.begin(), m_Level-&gt;m_Pickups.end(), pickup), m_Level-&gt;m_Pickups.end());
+                break;
+            }
+            case EntityType::PLAYER:
+                m_Level-&gt;m_LocalPlayer = NULL;
+                break;
+            }
+
+            // Set our current selection to what ever the raycast hit
+            m_EntitySelection = selectedEntity;
+        }
+
+    }
+}
+
 void Editor::PlaceSelection()
 {
     // Add the current selection to the level
@@ -527,6 +583,11 @@ void Editor::PlaceSelection()
         m_EntitySelection = NULL;
         SpawnEntitySelection();
     }
+    // We don't have an entity currently selected so try pickup the looked at entity
+    else
+    {
+        PickupSelection();
+    }
 }
 
 void Editor::RemoveSelection()
@@ -541,12 +602,16 @@ void Editor::RemoveSelection()
 
 void Editor::PrintEntitySelection()
 {
+    const wchar_t* description = ((m_EntitySelection) ? m_EntitySelection-&gt;ToString() : NULL); 
+
     Engine::GetInstance().m_spriteBatch-&gt;Begin();
 
-    Engine::GetInstance().m_font-&gt;DrawString(Engine::GetInstance().m_spriteBatch.get(), (m_EntitySelection)? m_EntitySelection-&gt;ToString() : L&quot;None&quot;, Engine::GetInstance().m_fontPos, Colors::OrangeRed, 0.0f,
-        Vector2((Engine::GetInstance().m_outputWidth / -2.0f) + (std::char_traits&lt;wchar_t&gt;::length((m_EntitySelection) ? m_EntitySelection-&gt;ToString() : L&quot;None&quot;)* 26.0f) + 20.0f, (Engine::GetInstance().m_outputHeight / 2.0f)));
+    Engine::GetInstance().m_font-&gt;DrawString(Engine::GetInstance().m_spriteBatch.get(), (description)? description : L&quot;None&quot;, Engine::GetInstance().m_fontPos, Colors::OrangeRed, 0.0f,
+        Vector2((Engine::GetInstance().m_outputWidth / -2.0f) + (std::char_traits&lt;wchar_t&gt;::length((description) ? description : L&quot;None&quot;)* 26.0f) + 20.0f, (Engine::GetInstance().m_outputHeight / 2.0f)));
 
     Engine::GetInstance().m_spriteBatch-&gt;End();
+
+    delete description;
 }
 
 // Input handling : Directional
