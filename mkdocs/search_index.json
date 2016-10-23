@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/",
-            "text": "Overview\n\n\nThis is my personal portfolio, please have a look around!\n\n\nMarc Tucker",
+            "text": "What is this place?\n\n\nThis is my personal portfolio! This portfolio contains some of the work I've done and want people to see.\n\n\nplease have a look around!\n\n\nWho is Marc Tucker?\n\n\nI am a student, game and software developer currently working as an intern at Orion Health with a great passion for programming.",
             "title": "Home"
         },
         {
-            "location": "/#overview",
-            "text": "This is my personal portfolio, please have a look around!  Marc Tucker",
-            "title": "Overview"
+            "location": "/#what-is-this-place",
+            "text": "This is my personal portfolio! This portfolio contains some of the work I've done and want people to see.  please have a look around!",
+            "title": "What is this place?"
+        },
+        {
+            "location": "/#who-is-marc-tucker",
+            "text": "I am a student, game and software developer currently working as an intern at Orion Health with a great passion for programming.",
+            "title": "Who is Marc Tucker?"
         },
         {
             "location": "/killshot/",
