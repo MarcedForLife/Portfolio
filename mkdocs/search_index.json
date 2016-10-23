@@ -102,7 +102,7 @@
         },
         {
             "location": "/twitcher/",
-            "text": "Twitcher\n\n\nTwitcher is 3D/2D multiplayer shooter where players can go play against each other to become the best!\n\n\nBackground\n\n\nThis project was created as a result of learning SCRUM as a software development methodology. The game is built on the Unreal Engine 4 using blueprint, and intended for use on Windows PC's and Android smart phones.\n\n\nVideo\n\n\nMultiplayer Test:\nMap & Weapon Changing:\n\n\n\n\n\nMap & Weapon Changing:\n\n\n\n\n\nDownloads\n\n\nSorry but Twitcher is no longer supported and will no longer contiune to be publicly hosted.\n\n\nReferences\n\n\nEpic Games. (2016). Unreal Engine 4. [online] \nAvailable at: https://www.unrealengine.com/what-is-unreal-engine-4 [Accessed 20 March. 2016].",
+            "text": "Twitcher\n\n\nTwitcher is 3D/2D multiplayer shooter where players can go play against each other to become the best!\n\n\nBackground\n\n\nThis project was created as a result of learning SCRUM as a software development methodology. The game is built on the Unreal Engine 4 using blueprint, and intended for use on Windows PC's and Android smart phones.\n\n\nVideos\n\n\nMultiplayer Test:\n\n\n\n\n\nMap & Weapon Changing:\n\n\n\n\n\nDownloads\n\n\nSorry but Twitcher is no longer supported and will no longer contiune to be publicly hosted.\n\n\nReferences\n\n\nEpic Games. (2016). Unreal Engine 4. [online] \nAvailable at: https://www.unrealengine.com/what-is-unreal-engine-4 [Accessed 20 March. 2016].",
             "title": "Twitcher"
         },
         {
@@ -116,9 +116,9 @@
             "title": "Background"
         },
         {
-            "location": "/twitcher/#video",
-            "text": "Multiplayer Test:\nMap & Weapon Changing:   Map & Weapon Changing:",
-            "title": "Video"
+            "location": "/twitcher/#videos",
+            "text": "Multiplayer Test:   Map & Weapon Changing:",
+            "title": "Videos"
         },
         {
             "location": "/twitcher/#downloads",
@@ -131,9 +131,44 @@
             "title": "References"
         },
         {
+            "location": "/precursor/",
+            "text": "Precursor\n\n\nThe story for Precursor is still under wraps.\n\n\nBackground\n\n\nThis project is a restart of my first Unreal Engine 4 project \"Forge\". And will prove to be my most ambiguous project yet.\n\n\nVideos\n\n\nSmall Demo:\n\n\n\n\n\nDownloads\n\n\nSorry, this project is still too early in development to provide a playable alpha.\n\n\nReferences\n\n\nEpic Games. (2016). Unreal Engine 4. [online] \nAvailable at: https://www.unrealengine.com/what-is-unreal-engine-4 [Accessed 20 March. 2016].",
+            "title": "Precursor"
+        },
+        {
+            "location": "/precursor/#precursor",
+            "text": "The story for Precursor is still under wraps.",
+            "title": "Precursor"
+        },
+        {
+            "location": "/precursor/#background",
+            "text": "This project is a restart of my first Unreal Engine 4 project \"Forge\". And will prove to be my most ambiguous project yet.",
+            "title": "Background"
+        },
+        {
+            "location": "/precursor/#videos",
+            "text": "Small Demo:",
+            "title": "Videos"
+        },
+        {
+            "location": "/precursor/#downloads",
+            "text": "Sorry, this project is still too early in development to provide a playable alpha.",
+            "title": "Downloads"
+        },
+        {
+            "location": "/precursor/#references",
+            "text": "Epic Games. (2016). Unreal Engine 4. [online] \nAvailable at: https://www.unrealengine.com/what-is-unreal-engine-4 [Accessed 20 March. 2016].",
+            "title": "References"
+        },
+        {
             "location": "/resume/",
             "text": "Download: \nMarc Tucker - Resume.pdf",
             "title": "Resume"
+        },
+        {
+            "location": "/contact/",
+            "text": "Feel free to contact me at the following email:\n\n\nmarcedforlife@gmail.com",
+            "title": "Contact"
         }
     ]
 }
