@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "What is this place?\n\n\nThis is my personal portfolio! This portfolio contains some of the work I've done and want people to see.\n\n\nplease have a look around!\n\n\nWho is Marc Tucker?\n\n\nI am a student, game and software developer currently working as an intern at Orion Health with a great passion for programming.",
+            "text": "What is this place?\n\n\nThis is my personal portfolio! This portfolio contains some of the work I've done and want people to see.\n\n\nplease have a look around!\n\n\nWho is Marc Tucker?\n\n\nI am a graduate software engineer from the Auckland University of Technology. I love game development and experimenting with the latest technology advancements.\n\n\nResume\n\n\n\nDownload: \nMarc Tucker - Resume.pdf",
             "title": "Home"
         },
         {
@@ -12,8 +12,13 @@
         },
         {
             "location": "/#who-is-marc-tucker",
-            "text": "I am a student, game and software developer currently working as an intern at Orion Health with a great passion for programming.",
+            "text": "I am a graduate software engineer from the Auckland University of Technology. I love game development and experimenting with the latest technology advancements.",
             "title": "Who is Marc Tucker?"
+        },
+        {
+            "location": "/#resume",
+            "text": "Download:  Marc Tucker - Resume.pdf",
+            "title": "Resume"
         },
         {
             "location": "/killshot/",
@@ -159,11 +164,6 @@
             "location": "/precursor/#references",
             "text": "Epic Games. (2016). Unreal Engine 4. [online] \nAvailable at: https://www.unrealengine.com/what-is-unreal-engine-4 [Accessed 17 April. 2016].  IronBelly Studios. (2016). IronBelly Studios. [online] \nAvailable at: http://ironbellystudios.com/ [Accessed 17 April. 2016].  Cubit Studios. (2016). Cubit Studios. [online] \nAvailable at: http://www.cubitstudios.com/ [Accessed 17 April. 2016].",
             "title": "References"
-        },
-        {
-            "location": "/resume/",
-            "text": "Download: \nMarc Tucker - Resume.pdf",
-            "title": "Resume"
         },
         {
             "location": "/contact/",
